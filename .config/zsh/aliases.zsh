@@ -15,3 +15,6 @@ alias pg='ping 8.8.8.8'
 
 # authy
 alias authy='brave --profile-directory=Default --app-id=gaedmjdfmmahhbjefcbgaolhhanlaolb'
+
+# pacman
+alias pi='sudo pacman -S $1'

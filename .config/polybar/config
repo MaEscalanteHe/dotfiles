@@ -59,12 +59,13 @@ inherit = bar/main
 height = 28
 modules-left = bspwm
 ;modules-center = xwindow
-modules-right = xbacklight pulseaudio xkeyboard memory cpu wlan eth battery date
+modules-right = xbacklight pulseaudio pulseaudio-control xkeyboard memory cpu wlan eth battery date
 
 padding-right = 2
 
 tray-position = right
 tray-padding = 2
+;tray-detached = false
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
@@ -81,15 +82,6 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[bar/bottom]
-inherit = bar/main
-bottom = true
-
-height = 28
-modules-left = mpd
-modules-right = xbacklight pulseaudio
-
-padding-right = 5
 
 [module/xwindow]
 type = internal/xwindow
@@ -112,17 +104,6 @@ label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
-
-
-[module/filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /
-
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
 
 
 [module/bspwm]
@@ -246,7 +227,7 @@ label = %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
+format-volume = %{A3:pavucontrol &:}<label-volume> <bar-volume>%{A}
 label-volume =  %percentage%% 
 label-volume-foreground = ${root.foreground}
 
