@@ -1,33 +1,25 @@
 #!/bin/sh
 
-# Startup
-setxkbmap -layout us,latam -option grp:alt_shift_toggle &
-numlockx
+# Startup.
+$HOME/Scripts/startup.sh
 
-pgrep -x sxhkd > /dev/null || sxhkd &
-
-compton --config $HOME/.config/compton/compton.conf &
-
-feh --bg-fill $HOME/Pictures/Wallpapers/wallpaper.jpg &
-
-pgrep -x dunst > /dev/null || dunst &
-
-wmname LG3D &
-
-$HOME/.config/polybar/scripts/launch.sh &
-
-pgrep telegram > /dev/null || telegram-desktop &
-pgrep slack > /dev/null || slack -s &
+# Monitors.
+if [[ $(xrandr --query | grep ' connected' | wc -l) = 2 ]]; then
+	bspc monitor eDP1 -d I II III IV V
+	bspc monitor HDMI1 -d VI VII VIII IX X
+else
+	bspc monitor HDMI1 -r
+	bspc monitor eDP1 -d I II III IV V VI VII VIII IX X
+fi
 
 bspc config pointer_modifier mod1
-bspc monitor -d I II III IV V VI VII VIII IX X
 
 bspc config top_padding			0
 bspc config right_padding		0
 bspc config bottom_padding 		0
 bspc config left_padding 		0
 bspc config border_width 		2
-bspc config window_gap 			10
+bspc config window_gap 			3
 
 bspc config normal_border_color 	"#252525"
 bspc config focused_border_color 	"#0050B7"
@@ -38,9 +30,6 @@ bspc config borderless_monocle 		true
 bspc config gapless_monocle 		true
 bspc config focus_follows_pointer 	false
 
-# [Deprecated] Brave picture in picture 
-#bspc config external_rules_command $HOME/.config/bspwm/scripts/external_rules
-
 bspc rule -a dolphin state=floating follow=on
 bspc rule -a Pavucontrol state=floating follow=on 
 bspc rule -a rimworldwin64.exe desktop='^5' follow=on focus=on
@@ -49,7 +38,7 @@ bspc rule -a Slack desktop='^9'
 bspc rule -a TelegramDesktop desktop='^10'
 
 # Android studio.
-bspc rule -a jetbrains-studio desktop='^4'
+bspc rule -a jetbrains-studio
 bspc rule -a jetbrains-studio:sun-awt-X11-XFramePeer:"Welcome to Android Studio" state=floating
 bspc rule -a jetbrains-studio:sun-awt-X11-XWindowPeer:"win0" state=floating 
 

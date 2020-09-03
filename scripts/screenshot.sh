@@ -8,4 +8,4 @@ if [ ! -d "$PICTURES" ] ; then
 fi
 
 scrot -q 100 $FILENAME -e 'mv $f $$(xdg-user-dir PICTURES)/Screenshots'
-maim | xclip -selection clipboard -t image/png
+maim -m 1 | xclip -selection clipboard -t image/png

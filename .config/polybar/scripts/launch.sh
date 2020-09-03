@@ -9,8 +9,16 @@ killall -q polybar
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-# Launch bar
 echo "---" | tee -a $LOG_TOP 
-polybar top >> $LOG_TOP 2>&1 & disown
+
+# Launch bar according to monitor
+if type "xrandr"; then
+	for m in $(xrandr --query | grep " connected" | awk '{print $1}'); do
+		echo "Polybar in $m" | tee -a $LOG_TOP
+		MONITOR=$m polybar --reload top >> $LOG_TOP 2>&1 & disown
+	done
+else
+	polybar top >> $LOG_TOP 2>&1 & disown
+fi
 
 echo "Polybar launched..."

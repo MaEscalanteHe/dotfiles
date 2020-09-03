@@ -18,3 +18,7 @@ alias authy='brave --profile-directory=Default --app-id=gaedmjdfmmahhbjefcbgaolh
 
 # pacman
 alias pi='sudo pacman -S $1'
+
+# protonvpn
+alias proton='sudo protonvpn'
+alias pvpn='proton connect --cc US -p $1'

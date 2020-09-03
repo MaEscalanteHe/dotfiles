@@ -27,7 +27,7 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/main]
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:eDP1}
 width = 100%
 ;offset-x = 1%
 ;offset-y = 1%
@@ -59,7 +59,7 @@ inherit = bar/main
 height = 28
 modules-left = bspwm
 ;modules-center = xwindow
-modules-right = xbacklight pulseaudio pulseaudio-control xkeyboard memory cpu wlan eth battery date
+modules-right = xbacklight pulseaudio xkeyboard memory cpu wlan eth protonvpn-status ping-status battery date
 
 padding-right = 2
 
@@ -68,7 +68,7 @@ tray-padding = 2
 ;tray-detached = false
 ;tray-background = #0063ff
 
-;wm-restack = bspwm
+wm-restack = bspwm
 ;wm-restack = i3
 
 ;override-redirect = true
@@ -301,3 +301,13 @@ margin-top = 0
 margin-bottom = 0
 
 ; vim:ft=dosini
+
+[module/protonvpn-status]
+type = custom/script
+exec = ~/.config/polybar/scripts/protonvpn-status.sh
+interval = 5
+
+[module/ping-status]
+type = custom/script
+exec = ~/.config/polybar/scripts/ping-status.sh
+interval = 1
