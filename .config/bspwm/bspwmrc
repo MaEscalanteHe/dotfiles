@@ -37,6 +37,9 @@ bspc rule -a Spotify desktop='^8'
 bspc rule -a Slack desktop='^9'
 bspc rule -a TelegramDesktop desktop='^10'
 
+# Terminator
+bspc rule -a Terminator:terminator:"Terminator Preferences" state=floating follow=on
+
 # Android studio.
 bspc rule -a jetbrains-studio
 bspc rule -a jetbrains-studio:sun-awt-X11-XFramePeer:"Welcome to Android Studio" state=floating

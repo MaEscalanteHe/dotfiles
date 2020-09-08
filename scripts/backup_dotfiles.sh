@@ -44,7 +44,8 @@ backup () {
 	[ -d $CONFIG_DIR/fish ] && backup_copy "$CONFIG_DIR/fish" ".config"
 	[ -d $CONFIG_DIR/omf ] && backup_copy "$CONFIG_DIR/omf" ".config"
 	[ -d $CONFIG_DIR/zsh ] && backup_copy "$CONFIG_DIR/zsh" ".config"
-	[ -d $CONDIF_DIR/dunst ] && backup_copy "$CONFIG_DIR/dunst" ".config"
+	[ -d $CONFIG_DIR/dunst ] && backup_copy "$CONFIG_DIR/dunst" ".config"
+	[ -d $CONFIG_DIR/terminator ] && backup_copy "$CONFIG_DIR/terminator" ".config"
 
 	sleep 0.5
 	echo -e "\nCopy Script directory...\n"

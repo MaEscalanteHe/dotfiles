@@ -168,3 +168,6 @@ super + {XF86MonBrightnessDown,XF86MonBrightnessUp}
 # Screenshot
 Print
 	$HOME/Scripts/screenshot.sh
+
+super + Print
+	maim -s -m 10 | xclip -selection clipboard -t image/png
