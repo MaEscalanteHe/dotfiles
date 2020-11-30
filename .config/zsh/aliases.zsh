@@ -22,3 +22,8 @@ alias pi='sudo pacman -S $1'
 # protonvpn
 alias proton='sudo protonvpn'
 alias pvpn='proton connect --cc US -p $1'
+
+# custom
+alias wpana='cd ~/Workspace/pana'
+alias wgg='cd ~/Workspace/gravitygaming'
+alias work='cd ~/Workspace'
