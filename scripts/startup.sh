@@ -16,7 +16,7 @@ POLYBAR="$HOME/.config/polybar/scripts/launch.sh"
 [ -x $POLYBAR ] && $POLYBAR
 
 # wallpaper
-feh --bg-fill $HOME/Pictures/Wallpapers/wallpaper.jpg --bg-fill $HOME/Pictures/Wallpapers/wallpaper2.png &
+feh --bg-fill $HOME/Pictures/Wallpapers/wallpaper --bg-fill $HOME/Pictures/Wallpapers/wallpaper2 &
 
 # effects 
 compton --config $HOME/.config/compton/compton.conf &
@@ -29,4 +29,4 @@ pgrep -x dunst > /dev/null || dunst &
 
 # startup apps
 pgrep telegram > /dev/null || telegram-desktop &
-pgrep slack > /dev/null || slack &
+#pgrep slack > /dev/null || slack &

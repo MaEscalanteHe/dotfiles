@@ -47,6 +47,3 @@ bspc rule -a jetbrains-studio:sun-awt-X11-XWindowPeer:"win0" state=floating
 
 # Picture in picture.
 bspc rule -a *:*:"Picture in picture" state=floating
-
-# Authy (Brave extension).
-bspc rule -a Brave-browser:crx_gaedmjdfmmahhbjefcbgaolhhanlaolb state=floating follow=on

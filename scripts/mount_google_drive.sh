@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 DRIVE_FOLDER=$HOME/Drive
 F_READ_ONLY="--read_only"
@@ -13,12 +13,14 @@ mkdir -p $DRIVE_FOLDER
 echo "Mounting..."
 rclone about Drive:
 sleep 0.3
+rclone mount Drive: $DRIVE_FOLDER &
+echo "Drive mounted on $DRIVE_FOLDER"
 
-while test $# -gt 0; do
-	case "$1" in
-		"-w"|"--write") 
-			$F_READ_ONLY=""
-			break;;
-		*) break;;
-	esac
-done
+#while test $# -gt 0; do
+#	case "$1" in
+#		"-w"|"--write") 
+#			$F_READ_ONLY=""
+#			break;;
+#		*) break;;
+#	esac
+#done

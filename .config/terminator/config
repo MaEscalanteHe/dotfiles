@@ -1,12 +1,11 @@
 [global_config]
-  borderless = True
 [keybindings]
 [profiles]
   [[default]]
-    background_darkness = 0.8
+    background_darkness = 0.9
     background_type = transparent
     cursor_color = "#aaaaaa"
-    font = Hack Nerd Font Mono 12
+    font = Source Code Pro 13
     show_titlebar = False
     scrollbar_position = hidden
     scrollback_infinite = True

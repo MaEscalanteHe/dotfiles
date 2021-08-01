@@ -62,6 +62,8 @@ backup () {
 	[ -d $CONFIG_DIR/zsh ] && backup_copy "$CONFIG_DIR/zsh" ".config"
 	[ -d $CONFIG_DIR/dunst ] && backup_copy "$CONFIG_DIR/dunst" ".config"
 	[ -d $CONFIG_DIR/terminator ] && backup_copy "$CONFIG_DIR/terminator" ".config"
+	[ -d $CONFIG_DIR/vim ] && backup_copy "$CONFIG_DIR/vim" ".config"
+	[ -d $CONFIG_DIR/nvim ] && backup_copy "$CONFIG_DIR/nvim" ".config"
 
 	sleep 0.5
 	echo -e "\nCopy Script directory...\n"
@@ -75,6 +77,7 @@ backup () {
 	[ -f $HOME/.p10k.zsh ] && backup_copy "$HOME/.p10k.zsh" "home"
 	[ -f $HOME/.xinitrc ] && backup_copy "$HOME/.xinitrc" "home"
 	[ -f $HOME/.zshrc ] && backup_copy "$HOME/.zshrc" "home"
+	[ -f $HOME/.vimrc ] && backup_copy "$HOME/.vimrc" "home"
 
 	sleep 0.5
 	echo -e "\nAlready up to date.\n"
