@@ -74,9 +74,7 @@ backup () {
 	echo -e "\nCopy other files in home directory...\n"
 
 	[ -f $HOME/.fehbg ] && backup_copy "$HOME/.fehbg" "home"
-	[ -f $HOME/.p10k.zsh ] && backup_copy "$HOME/.p10k.zsh" "home"
 	[ -f $HOME/.xinitrc ] && backup_copy "$HOME/.xinitrc" "home"
-	[ -f $HOME/.zshrc ] && backup_copy "$HOME/.zshrc" "home"
 	[ -f $HOME/.vimrc ] && backup_copy "$HOME/.vimrc" "home"
 
 	sleep 0.5
@@ -104,9 +102,7 @@ restore () {
 	sleep 0.5
 	echo -e "\nRestore other files in home directory...\n"
 	restore_copy "$REPOSITORY_LOCAL_DIR/.fehbg" "home"
-	restore_copy "$REPOSITORY_LOCAL_DIR/.p10k.zsh" "home"
 	restore_copy "$REPOSITORY_LOCAL_DIR/.xinitrc" "home"
-	restore_copy "$REPOSITORY_LOCAL_DIR/.zshrc" "home"
 
 	sleep 0.5
 	echo -e "\nRestore complete successfully."
