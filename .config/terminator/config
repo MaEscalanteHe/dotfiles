@@ -5,9 +5,8 @@
     background_darkness = 0.9
     background_type = transparent
     cursor_color = "#aaaaaa"
-    font = Source Code Pro 12
+    font = Hack 10
     show_titlebar = False
-    scrollbar_position = hidden
     scrollback_infinite = True
     use_system_font = False
 [layouts]
@@ -18,5 +17,4 @@
     [[[child1]]]
       type = Terminal
       parent = window0
-      profile = default
 [plugins]
